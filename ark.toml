@@ -1,0 +1,11 @@
+# textkit -- small text helpers for Fid.
+# The pact the registry's README uses as its example, published for real.
+
+[package]
+name = "textkit"
+version = "1.0.0"
+edition = "2026"
+authors = ["Pledge & Grow"]
+description = "Small text helpers: title(), the README's textkit_title(), a version stamp."
+license = "MIT"
+repository = "https://github.com/pledgeandgrow/textkit"

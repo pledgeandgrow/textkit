@@ -1,0 +1,37 @@
+// textkit: small text helpers. `use textkit;` then title("hello pacts").
+use string;
+
+/// The registry README's example: the words of `s`, each starting with its
+/// upper-case letter (ASCII).
+pub fn textkit_title(s: str) -> str {
+    var out: str = "";
+    var start_of_word: bool = true;
+    var i: i64 = 0;
+    while i < str_len(s) {
+        var c: str = str_slice(s, i, i + 1);
+        var code: i64 = str_byte_at(s, i);
+        if code == 32 {
+            out = out + c;
+            start_of_word = true;
+        } else {
+            if start_of_word {
+                out = out + str_to_upper(c);
+            } else {
+                out = out + str_to_lower(c);
+            }
+            start_of_word = false;
+        }
+        i = i + 1;
+    }
+    return out;
+}
+
+/// Title-case the words of `s` (the short name of textkit_title).
+pub fn title(s: str) -> str {
+    return textkit_title(s);
+}
+
+/// The version this pact was published as.
+pub fn textkit_version() -> str {
+    return "1.0.0";
+}
